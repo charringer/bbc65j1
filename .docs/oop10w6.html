@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="de"><head>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link href="oop10w6-Dateien/complang.css" rel="stylesheet" type="text/css">
+  <link href="http://www.complang.tuwien.ac.at/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="http://www.complang.tuwien.ac.at/franz/" rel="Start" type="text/html">
+  <title>Objektorientierte Programmierung, 2010 W: 6. Laborübungsaufgabe</title>
+</head><body id="top">
+<div class="logo">
+<a href="http://www.complang.tuwien.ac.at/" title="Die Complang-Gruppe">
+  <img class="logo" alt="Computer Languages" src="oop10w6-Dateien/logo.png">
+</a>
+</div>
+
+<div>
+<p class="rightquote">
+  Objektorientierte Programmierung<br>
+   LVA 185.162, VL 2.0, 2010 W
+</p>
+<h1>6. Laborübungsaufgabe</h1>
+<h4>Themen:</h4>
+dynamische Typinformation, homogene Übersetzung von Generizität
+<h4>Termine:</h4>
+<table>
+ <tbody><tr><td>Ausgabe:</td>
+ <td>24.11.2010</td>
+ </tr><tr><td>reguläre Abgabe:</td>
+ <td>01.12.2010, 13:45 Uhr</td>
+ </tr><tr><td>nachträgliche Abgabe:</td>
+ <td>09.12.2010 (Donnerstag), 13:45 Uhr</td>
+</tr></tbody></table>
+<h4>Abgabeverzeichnis:</h4>
+Aufgabe6
+<h4>Programmaufruf:</h4>
+java Test
+<h4>Grundlage:</h4>
+<a class="intext" href="http://www.complang.tuwien.ac.at/franz/oop10w#skriptum">Skriptum</a> bis Seite 124, Schwerpunkt auf den Abschnitten 3.3.1 und 3.3.2
+
+<h2>Aufgabe</h2>
+<h4>Welche Aufgabe zu lösen ist:</h4>
+
+Ein Fuhrpark besteht aus beliebig vielen Fahrzeugen.
+Jedes Fahrzeug hat eine eindeutige, unveränderliche Nummer und einen 
+Zähler für den Kilometerstand.
+Es gibt Fahrzeuge mit Verbrennungsmotor und Fahrzeuge mit Elektromotor.
+Fahrzeuge mit Verbrennungsmotor haben einen Zähler für den 
+Treibstoffverbrauch, Fahrzeuge mit Elektromotor haben einen Zähler für 
+den Stromverbrauch.
+Fahrzeuge können für unterschiedliche, auch wechselnde Aufgaben 
+eingesetzt und dazu umgerüstet werden.
+Es gibt zwei Arten von Einsatzbereichen, Personenbeförderung und 
+Lastenbeförderung:
+Bei der Personenbeförderung ist die Anzahl der verfügbaren Sitzplätze 
+(inkl. Fahrer) und bei der Lastenbeförderung ist die Größe der 
+Ladefläche (in Quadratmeter) und die höchste zulässige Zuladung (in 
+Kilogramm) bekannt.
+Zu einem Zeitpunkt wird ein Fahrzeug höchstens für eine Art von Aufgabe 
+eingesetzt.
+<p>
+Entwickeln Sie Java-Klassen bzw. Interfaces zur Darstellung von Fahrzeugen auch für unterschiedliche Einsatzarten.
+Folgende Funktionalität soll unterstützt werden:
+</p><ul>
+<li>Erzeugen eines Fahrzeuges.
+</li><li>Erhöhen des Kilometerstandes.
+</li><li>Auslesen des Kilometerstandes.
+</li><li>Erhöhen und Auslesen des Standes des Treibstoffverbrauches (in Liter gemessen) bei Fahrzeugen mit Verbrennungsmotor.
+</li><li>Erhöhen und Auslesen des Stromverbrauchs (in Kilowattstunden gemessen) bei Fahrzeugen mit Elektromotor.
+</li><li>Ändern der Art des Einsatzes eines Fahrzeugs, wobei Informationen über frühere Einsätze dieses Fahrzeugs verloren gehen.
+</li></ul>
+<p>
+Schreiben Sie eine Klasse <var>Fuhrpark</var>, die Informationen über einen Fuhrpark verwaltet und statistische Auswertungen über diesen Fuhrpark ermöglicht.
+Jeder Fuhrpark wird über einen eindeutigen, unveränderlichen Namen identifiziert.
+Folgende Methoden sollen unterstützt werden:
+</p><ul>
+<li>Erzeugen eines Fuhrparks.
+</li><li>Einfügen von Fahrzeugen in einen Fuhrpark.
+</li><li>Entfernen von Fahrzeugen aus einem Fuhrpark.
+</li><li>Ändern der Informationen über Fahrzeuge wie oben beschrieben.
+</li><li>Methoden zum Berechnen folgender statistischer Werte:
+  <ul>
+  <li>Der durchschnittliche Treibstoffverbrauch pro Kilometer eines 
+Fahrzeugs mit Verbrennungsmotor für alle Fahrzeuge eines Fuhrparks und 
+zusätzlich aufgeschlüsselt nach den Einsatzarten (Personen- oder 
+Lastenbeförderung).
+  </li><li>Der durchschnittliche Stromverbrauch pro Kilometer eines 
+Fahrzeugs mit Elektromotor für alle Fahrzeuge eines Fuhrparks und 
+zusätzlich aufgeschlüsselt nach den Einsatzarten (Personen- oder 
+Lastenbeförderung).
+  </li><li>Die durchschnittliche Sitzanzahl aller Fahrzeuge zur 
+Personenbeförderung insgesamt und aufgeschlüsselt nach Fahrzeugen mit 
+Verbrennungsmotor und Elektromotor.
+  </li><li>Die durchschnittliche Größe der Ladefläche aller Fahrzeuge 
+zur Lastenbeförderung insgesamt und aufgeschlüsselt nach Fahrzeugen mit 
+Verbrennungsmotor und Elektromotor.
+  </li></ul>
+</li></ul>
+<p>
+Die Klasse <var>Test</var> soll die wichtigsten Normal- und Grenzfälle 
+(nicht interaktiv) überprüfen und die Ergebnisse in allgemein 
+verständlicher Form in der Standardausgabe darstellen.
+Machen Sie unter anderem Folgendes:
+</p><ul>
+<li> Erstellen Sie eine Menge von Fuhrparks von jeweils einigen Fahrzeugen &#8211; wirklich eine <em>Menge</em>
+ von Fuhrparks, nicht nur eine Ansammlung einzelner Variablen.
+   Jeder Fuhrpark in der Menge soll über seinen eindeutigen Namen 
+angesprochen werden können, und jedes Fahrzeug eines Fuhrparks über 
+seine eindeutige Nummer.
+</li><li> Fügen Sie zu einigen Fuhrparks einzelne Fahrzeuge hinzu, 
+entfernen Sie einzelne Fahrzeuge, und ändern Sie die Informationen zu 
+einzelnen Fahrzeugen, wobei Sie Fuhrparks und Fahrzeuge nur über deren 
+Nummern und Namen ansprechen.
+</li><li> Berechnen Sie die statistischen Werte aller Fuhrparks (wie oben beschrieben). 
+</li></ul>
+<p>
+Generizität, Arrays und vorgefertigte Container-Klassen dürfen zur Lösung dieser Aufgabe nicht verwendet werden.
+Vermeiden Sie mehrfach vorkommenden Code für gleiche oder ähnliche Programmteile.
+
+
+</p><h4>Warum die Aufgabe diese Form hat:</h4>
+
+Diese Aufgabenstellung lässt Ihnen mehr Entscheidungsspielraum als die 
+beiden vorangegangenen.
+Die gleichzeitige Unterscheidung von Elektrofahrzeugen und Fahrzeugen 
+mit Verbrennungsmotor sowie zwischen unterschiedlichen Beförderungsarten
+ stellt beispielsweise eine Schwierigkeit dar, für die es mehrere 
+sinnvolle Lösungsansätze gibt.
+Sie werden irgendeine Form von Container selbst erstellen müssen, wobei 
+die genaue Form und Funktionalität nicht vorgegeben ist.
+Da Container an mehreren Stellen benötigt werden, wäre die Verwendung 
+von Generizität sinnvoll.
+Dadurch, dass Sie Generizität nicht verwenden dürfen und trotzdem 
+mehrfache Vorkommen ähnlichen Codes vermeiden sollen, werden Sie 
+gezwungen, Techniken ähnlich denen einzusetzen, die der Compiler zur 
+homogenen Übersetzung von Generizität verwendet.
+Vermutlich sind Typumwandlungen kaum vermeidbar.
+Sie sollen dadurch ein tieferes Verständnis des Zusammenhangs zwischen 
+Generizität und Typumwandlungen bekommen.
+
+
+<h4>Was im Hinblick auf die Beurteilung zu beachten ist:</h4>
+
+Der Schwerpunkt bei der Beurteilung liegt auf der vernünftigen Verwendung von dynamischer und statischer Typinformation.
+Kräftige Punkteabzüge gibt es für
+<ul>
+<li>die Verwendung von Generizität bzw. von Arrays oder vorgefertigten Container-Klassen
+</li><li>mehrfach vorkommende gleiche oder ähnliche Programmteile (wenn vermeidbar)
+</li><li>den unnötigen Verlust an statischer Typsicherheit
+</li><li>Verletzungen des Ersetzbarkeitsprinzips bei Verwendung von 
+Vererbungsbeziehungen (also Vererbungsbeziehungen, die keine 
+Untertypbeziehungen sind)
+</li><li>und mangelhafte Funktionalität des Programms.
+</li></ul>
+Punkteabzüge gibt es unter anderem auch für mangelhafte Zusicherungen und falsche Sichtbarkeit.
+
+<h4>Wie die Aufgabe zu lösen ist:</h4>
+
+Es wird empfohlen, die Aufgabe zuerst mit Hilfe von Generizität zu lösen
+ und in einem weiteren Schritt eine homogene Übersetzung der Generizität
+ (wie im Skriptum beschrieben) händisch durchzuführen.
+Durch diese Vorgehensweise erreichen Sie eine statische Überprüfung der 
+Korrektheit vieler Typumwandlungen und vermeiden den unnötigen Verlust 
+an statischer Typsicherheit.
+<p>
+Zur Lösung dieser Aufgabe ist die Verwendung von Typumwandlungen 
+ausdrücklich erlaubt.
+Versuchen Sie trotzdem, die Anzahl der Typumwandlungen klein zu halten 
+und so viel Typinformation wie möglich statisch vorzugeben.
+Das hilft Ihnen dabei, die Lösung überschaubar zu halten und einen 
+unnötigen Verlust an statischer Typsicherheit zu vermeiden.
+Gehen Sie auch möglichst sparsam mit dynamischen Typabfragen und 
+Ausnahmebehandlungen um.
+</p><p>
+Achten Sie darauf, dass Sie Divisionen durch 0 vermeiden.
+Führen Sie zumindest einen Testfall ein, bei dem eine statistische 
+Auswertung ohne entsprechende Vorkehrungen eine Exception auslösen 
+würde.
+</p><p>
+Bedenken Sie, dass es mehrere sinnvolle Lösungsansätze für diese Aufgabe
+ gibt.
+Wenn Sie einmal einen gangbaren Weg gefunden haben, bleiben Sie dabei, 
+und vermeiden Sie es, zu viele Möglichkeiten auszuprobieren.
+Das könnte Ihnen viel Zeit kosten, ohne die Lösung zu verbessern.
+</p><p>
+Die Art der Verwendung eines Fahrzeugs für verschiedene Beförderungszwecke kann sich im Laufe der Zeit ändern.
+Am besten stellt man solche Beziehungen über <em>Rollen</em> dar:
+Für jede Art von Fahrzeugen gibt es eine eigene Klasse mit den für die 
+jeweilige Art typischen Daten, und ein gemeinsamer Obertyp ermöglicht 
+den Zugriff auf diese Daten auf einheitliche Weise.
+In jedem Fahrzeug gibt es einen Zeiger auf die aktuelle Art der 
+Beförderung (= die Rolle, die das Fahrzeug gerade spielt).
+Wenn sich die Art ändert, braucht nur dieser Zeiger neu gesetzt zu 
+werden.
+Durch geschickte Auswahl der Methoden einer Rolle sind die meisten 
+Fallunterscheidungen vermeidbar, das heißt, Fallunterscheidungen werden 
+durch dynamisches Binden ersetzt.
+
+
+</p><h4>Was im Hinblick auf die Abgabe zu beachten ist:</h4>
+
+Verzichten Sie auch bei der Lösung dieser Aufgabe auf die Verwendung von
+ packages und Verzeichnissen innerhalb des Abgabeverzeichnisses <var>Gruppe/Aufgabe6</var>.
+Schreiben Sie (abgesehen von geschachtelten Klassen) nicht mehr als eine Klasse in jede Datei.
+</div>
+
+<div class="leftmenu">
+<dl class="leftbuttons">
+  <dt><a href="http://www.complang.tuwien.ac.at/" title="Die Complang-Gruppe">Complang</a>
+  </dt><dt><a href="http://www.complang.tuwien.ac.at/franz/" title="Franz Puntigam - TU Wien, Complang-Gruppe">Puntigam</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/ueber" title="Über Franz Puntigam">Über&nbsp;mich</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/research" title="Research of Franz Puntigam">Research</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/lehre" title="Lehrangebot von Franz Puntigam">Lehre</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/lehre10w" title="Puntigams Lehrangebot im Wintersemester 2010/2011">LVAs&nbsp;2010&nbsp;W</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/oop10w" title="LVA 185.162: Objektorientierte Programmierung - VL&nbsp;2.0, 2010&nbsp;W">OOP</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/oop10w1" title="Objektorientierte Programmierung, 2010 W: 1. Laborübungsaufgabe">1.&nbsp;Aufgabe</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/oop10w2" title="Objektorientierte Programmierung, 2010 W: 2. Laborübungsaufgabe">2.&nbsp;Aufgabe</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/oop10w3" title="Objektorientierte Programmierung, 2010 W: 3. Laborübungsaufgabe">3.&nbsp;Aufgabe</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/oop10w4" title="Objektorientierte Programmierung, 2010 W: 4. Laborübungsaufgabe">4.&nbsp;Aufgabe</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/oop10w5" title="Objektorientierte Programmierung, 2010 W: 5. Laborübungsaufgabe">5.&nbsp;Aufgabe</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong title="Kurzbezeichnung der aktuellen Seite">6.&nbsp;Aufgabe</strong>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/typsysteme10w" title="LVA 185.206: Typsysteme - VO&nbsp;2.0, 2010&nbsp;W">Typsysteme</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/lehre10s" title="Puntigams Lehrangebot im Sommersemester 2010">LVAs&nbsp;2010&nbsp;S</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/lehre_alt" title="Puntigams Lehrangebot in früheren Semestern">frühere&nbsp;Lehre</a>
+  </dt><dt>&nbsp;&nbsp;&nbsp;<a href="http://www.complang.tuwien.ac.at/franz/links" title="Links">Links</a>
+</dt></dl>
+</div>
+
+<div class="rightmenu">
+<dl class="rightbuttons">
+  <dt><a href="http://www.complang.tuwien.ac.at/franz/sitemap" title="Überblick über die Seiten">Sitemap</a>
+  </dt><dt><a href="http://www.complang.tuwien.ac.at/franz/kontakt" title="Kontakt zu Franz Puntigam">Kontakt</a>
+  </dt><dt class="header">Schnellzugriff:
+  </dt><dt><a href="http://www.complang.tuwien.ac.at/franz/oop10w#tutoren" title="LVA 185.162: Objektorientierte Programmierung - VL&nbsp;2.0, 2010&nbsp;W">Tutoren</a>
+  </dt><dt><a href="http://www.complang.tuwien.ac.at/franz/oop10w#skriptum" title="LVA 185.162: Objektorientierte Programmierung - VL&nbsp;2.0, 2010&nbsp;W">Skriptum</a>
+  </dt><dt><a href="http://www.complang.tuwien.ac.at/franz/oop10w#folien" title="LVA 185.162: Objektorientierte Programmierung - VL&nbsp;2.0, 2010&nbsp;W">Folien</a>
+  </dt><dt><a href="http://www.complang.tuwien.ac.at/franz/oop10w5" title="Objektorientierte Programmierung, 2010 W: 5. Laborübungsaufgabe">vorige&nbsp;Aufgabe</a>
+</dt></dl>
+</div>
+
+<div class="fi">
+<a href="http://www.informatik.tuwien.ac.at/" title="Fakultät für Informatik">
+  <img class="fi" alt="Fakultät für Informatik" src="oop10w6-Dateien/fi.png">
+</a>
+</div>
+
+<div class="tu">
+<a href="http://www.tuwien.ac.at/" title="Technische Universität Wien">
+  <img class="tu" alt="Technische Universität Wien" src="oop10w6-Dateien/tu.png">
+</a>
+</div>
+
+<address>
+  <a href="#top" title="Anfang dieser Seite">Anfang</a> |
+  <a href="http://validator.w3.org/check/referer" title="Überprüfung dieser Seite auf syntaktische Korrektheit">HTML 4.01</a> |
+  letzte Änderung: 2010-11-24 (<a href="http://www.complang.tuwien.ac.at/franz/" title="Verantwortlich für letzte Änderung">Puntigam</a>)
+</address>
+</body></html>
