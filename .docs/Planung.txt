@@ -1,0 +1,18 @@
+
+Fahrzeug (Vehicle)
+- erzeugen
+- Einsatzart ändern
+- Kilometerstand erhöhen/auslesen
+Benzin-getriebenes Fahrzeug (GasolineCar)
+- Treibstoffverbrauchszähler erhöhen/auslesen
+Elektro-Fahrzeug (ElectroCar)
+- Stromverbrauchszähler erhöhen/auslesen
+Einsatzbereich (Purpose)
+Personenbeförderung (PassengerTransportation)
+- Eigenschaft: Anzahl der Sitze
+Lastenbeförderung (GoodsTransportation)
+- Eigenschaft: Ladefläche
+- Eigenschaft: höchszulässige Nettomasse
+
+Fuhrpark (CarPool)
+[...]
