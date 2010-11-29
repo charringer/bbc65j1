@@ -1,29 +1,30 @@
 
-public class LinkedList<T> {
-	private LinkedListNode<T> start;
+public class VehicleList {
+
+	private VehicleListNode start;
 
 	/* prepends value to the beginning of the list
 	 * e.g.: if the list is [1,2,3] prepending 7 results
 	 * in [7,1,2,3] */
-	public void unshift(T value) {
-		start = new LinkedListNode<T>(start, value);
+	public void unshift(Vehicle value) {
+		start = new VehicleListNode(start, value);
 	}
 	
 	/* removes the value from the beginning of the list
 	 * and returns it */
-	public T shift() {
-		T head = head();
+	public Vehicle shift() {
+		Vehicle head = head();
 		start = start.getNext();
 		return head;
 	}
 	
 	/* returns the value at the beginning of the list */
-	public T head() {
+	public Vehicle head() {
 		return start.getValue(); 
 	}
 	
 	/* appends value to the end of the list */
-	public void push(T value) {
+	public void push(Vehicle value) {
 		Iterator it = iter();
 		while (it.hasNext()) {
 			it.next();
@@ -33,12 +34,12 @@ public class LinkedList<T> {
 	
 	/* removes the value from the end of the list
 	 * and returns it */
-	public T pop() {
+	public Vehicle pop() {
 		Iterator it = iter();
 		while (it.hasNext()) {
 			it.next();
 		}
-		T value = it.lookBack();
+		Vehicle value = it.lookBack();
 		it.delete();
 		return value;
 	}
@@ -54,13 +55,13 @@ public class LinkedList<T> {
 		return new Iterator(start);
 	}
 
-	public class Iterator implements Iter<T> {
-		private LinkedListNode<T> secondLast, last, cur;
+	public class Iterator {
+		private VehicleListNode secondLast, last, cur;
 
 		/* sets the element the iterator starts with to start 
 		 * the first call to next() returns the value of the 
 		 * start element */
-		public Iterator(LinkedListNode<T> start) {
+		public Iterator(VehicleListNode start) {
 			cur = start;
 		}
 
@@ -72,8 +73,8 @@ public class LinkedList<T> {
 
 		/* returns value of current element and sets current
 		 * element to the next element */
-		public T next() {
-			T val = peek();
+		public Vehicle next() {
+			Vehicle val = peek();
 			secondLast = last;
 			last = cur;
 			cur = cur.getNext();
@@ -97,28 +98,28 @@ public class LinkedList<T> {
 		}
 
 		/* returns value of current element */
-		public T peek() {
+		public Vehicle peek() {
 			return cur.getValue();
 		}
 		
 		/* returns value of previous element */
-		public T lookBack() {
+		public Vehicle lookBack() {
 			return last.getValue();
 		}
 
 		/* inserts the new element before the current
 		 * element */
-		public boolean insert(T elem) {
+		public boolean insert(Vehicle elem) {
 			if (last == null) {
 				unshift(elem);
 				return true;
 			}
 			if (cur == null && last != null) {
-				last.setNext(new LinkedListNode<T>(null, elem));
+				last.setNext(new VehicleListNode(null, elem));
 				return true;
 			}
 			if (cur != null && last != null) {
-				LinkedListNode<T> node = new LinkedListNode<T>(cur, elem);
+				VehicleListNode node = new VehicleListNode(cur, elem);
 				last.setNext(node);
 				secondLast = last;
 				last = node;
