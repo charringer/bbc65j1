@@ -14,9 +14,28 @@ public class VehicleTest extends Assert {
 	}
 
 	@Tst(expected = IllegalArgumentException.class)
-	public void incrementMileage_CannotDecrement() {
+	public void incrementMileage_cannotDecrement() {
 		Vehicle car = new GasolineCar();
 
 		car.incrementMileage(-500);
+	}
+
+	@Tst
+	public void setAndGetPurpose() {
+		Vehicle car = new Vehicle();
+
+		assertFalse(car.getPurpose() instanceof PassengerTransportation);
+		assertFalse(car.getPurpose() instanceof GoodsTransportation);
+
+		car.setPurpose(new PassengerTransportation(9));
+
+		assertTrue(car.getPurpose() instanceof PassengerTransportation);
+		assertEquals(9, ((PassengerTransportation)car.getPurpose()).getNumberOfSeats());
+
+		car.setPurpose(new GoodsTransportation(14, 4500));
+
+		assertTrue(car.getPurpose() instanceof GoodsTransportation);
+		assertEquals(14, ((GoodsTransportation)car.getPurpose()).getSizeOfCargoArea());
+		assertEquals(4500, ((GoodsTransportation)car.getPurpose()).getMaxNettoWeight());
 	}
 }
