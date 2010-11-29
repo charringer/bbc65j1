@@ -3,10 +3,6 @@ public class Vehicle {
 
 	private int mileage;
 
-	protected Vehicle() {
-		mileage = 0;
-	}
-
 	/* returns the mileage in kilometers >= 0
 	 */
 	public int getMileage() {

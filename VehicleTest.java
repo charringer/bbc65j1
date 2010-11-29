@@ -8,6 +8,9 @@ public class VehicleTest extends Assert {
 
 		car.incrementMileage(23400);
 		assertEquals(23400, car.getMileage());
+
+		car.incrementMileage(90);
+		assertEquals(23400+90, car.getMileage());
 	}
 
 	@Tst(expected = IllegalArgumentException.class)
