@@ -3,6 +3,11 @@ public class ElectroCar extends Vehicle {
 
 	private int powerConsumption;
 
+
+	public ElectroCar(int identifier) {
+		super(identifier);
+	}
+
 	/* returns the power consumption in kilowatthours >= 0
 	 */
 	public int getPowerConsumption() {

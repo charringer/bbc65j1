@@ -3,7 +3,7 @@ public class VehicleTest extends Assert {
 
 	@Tst
 	public void incrementAndGetMileage() {
-		Vehicle car = new GasolineCar();
+		Vehicle car = new GasolineCar(1);
 		assertEquals(0, car.getMileage());
 
 		car.incrementMileage(23400);
@@ -15,14 +15,14 @@ public class VehicleTest extends Assert {
 
 	@Tst(expected = IllegalArgumentException.class)
 	public void incrementMileage_cannotDecrement() {
-		Vehicle car = new GasolineCar();
+		Vehicle car = new GasolineCar(1);
 
 		car.incrementMileage(-500);
 	}
 
 	@Tst
 	public void setAndGetPurpose() {
-		Vehicle car = new Vehicle();
+		Vehicle car = new Vehicle(1);
 
 		assertFalse(car.getPurpose() instanceof PassengerTransportation);
 		assertFalse(car.getPurpose() instanceof GoodsTransportation);

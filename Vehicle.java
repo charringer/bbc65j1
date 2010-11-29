@@ -1,8 +1,14 @@
 
 public class Vehicle {
 
+	private int identifier;
 	private int mileage;
 	private Purpose purpose;
+
+	/* saves identifier */
+	public Vehicle(int identifier) {
+		this.identifier = identifier;
+	}
 
 	/* returns the mileage in kilometers >= 0
 	 */
@@ -29,5 +35,10 @@ public class Vehicle {
 	 */
 	public Purpose getPurpose() {
 		return purpose;
+	}
+
+	/* returns the identifier */
+	public int getIdentifier() {
+		return identifier;
 	}
 }

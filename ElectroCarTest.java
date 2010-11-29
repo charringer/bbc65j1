@@ -3,7 +3,7 @@ public class ElectroCarTest extends Assert {
 
 	@Tst
 	public void incrementAndGetPowerConsumption() {
-		ElectroCar car = new ElectroCar();
+		ElectroCar car = new ElectroCar(1);
 		assertEquals(0, car.getPowerConsumption());
 
 		car.incrementPowerConsumption(14400);

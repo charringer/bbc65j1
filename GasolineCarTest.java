@@ -3,7 +3,7 @@ public class GasolineCarTest extends Assert {
 
 	@Tst
 	public void incrementAndGetFuelConsumption() {
-		GasolineCar car = new GasolineCar();
+		GasolineCar car = new GasolineCar(1);
 		assertEquals(0, car.getFuelConsumption());
 
 		car.incrementFuelConsumption(2900);

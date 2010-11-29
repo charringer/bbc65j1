@@ -3,6 +3,10 @@ public class GasolineCar extends Vehicle {
 
 	private int fuelConsumption;
 
+	public GasolineCar(int identifier) {
+		super(identifier);
+	}
+
 	/* returns the fuel consumption in liters >= 0
 	 */
 	public int getFuelConsumption() {
