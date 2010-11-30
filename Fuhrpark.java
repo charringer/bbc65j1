@@ -33,8 +33,7 @@ public class Fuhrpark {
 	}
 
 	public double averageFuelConsumption() {
-		return averageFuelConsumptionGoodsTransport() + 
-			averageFuelConsumptionPassengerTransport();
+		return filteredFuelConsumption(Object.class);
 	}
 
 	public double averageFuelConsumptionPassengerTransport() {
@@ -46,8 +45,8 @@ public class Fuhrpark {
 	}
 
 	private double filteredFuelConsumption(Class purpose) {
-		int m=0;
-		int l=0;
+		double m=0;
+		double l=0;
 		GasolineCarIter i = vehicles.GasolineCarIter();
 		while(i.hasNext()) {
 			GasolineCar c = i.next();
@@ -61,8 +60,7 @@ public class Fuhrpark {
 	}
 
 	public double averagePowerConsumption() {
-		return averagePowerConsumptionGoodsTransport() + 
-			averagePowerConsumptionPassengerTransport();
+		return filteredPowerConsumption(Object.class);
 	}
 
 	public double averagePowerConsumptionPassengerTransport() {
@@ -74,8 +72,8 @@ public class Fuhrpark {
 	}
 
 	private double filteredPowerConsumption(Class purpose) {
-		int m=0;
-		int l=0;
+		double m=0;
+		double l=0;
 		ElectroCarIter i = vehicles.ElectroCarIter();
 		while(i.hasNext()) {
 			ElectroCar c = i.next();
@@ -89,20 +87,57 @@ public class Fuhrpark {
 	}
 
 	public double averageSeats() {
-		return averageSeatsOnFuelCars() +
-			averageSeatsOnElectroCars();
+		return averageSeatsFromIter(vehicles.iter()); 
 	}
 
 	public double averageSeatsOnElectroCars() {
 		return averageSeatsFromIter(vehicles.ElectroCarIter());
 	}
 
-	public double averageSeatsOnFuelCars() {
+	public double averageSeatsOnGasolineCars() {
 		return averageSeatsFromIter(vehicles.GasolineCarIter());
 	}
 
 	private double averageSeatsFromIter(Iter i) {
-		return 0;
+		int n = 0;
+		double s = 0;
+		while(i.hasNext()) {
+			Vehicle v = i.next();
+			if(v.getPurpose() instanceof PassengerTransportation) {
+				n++;
+				PassengerTransportation p = (PassengerTransportation)v.getPurpose();
+				s+=p.getNumberOfSeats();
+			}
+		}
+		if(n!=0) return s/n;
+		else return 0;
+	}
+
+	public double averageCargoArea() {
+		return averageCargoAreaFromIter(vehicles.iter()); 
+	}
+
+	public double averageCargoAreaOnElectroCars() {
+		return averageCargoAreaFromIter(vehicles.ElectroCarIter());
+	}
+
+	public double averageCargoAreaOnGasolineCars() {
+		return averageCargoAreaFromIter(vehicles.GasolineCarIter());
+	}
+
+	private double averageCargoAreaFromIter(Iter i) {
+		int n = 0;
+		double s = 0;
+		while(i.hasNext()) {
+			Vehicle v = i.next();
+			if(v.getPurpose() instanceof GoodsTransportation) {
+				n++;
+				GoodsTransportation p = (GoodsTransportation)v.getPurpose();
+				s+=p.getSizeOfCargoArea();
+			}
+		}
+		if(n!=0) return s/n;
+		else return 0;
 	}
 }
 
