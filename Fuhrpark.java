@@ -14,7 +14,10 @@ public class Fuhrpark {
 	}
 
 	public void RemoveVehicle(Vehicle vehicle) {
-		int identifier = vehicle.getIdentifier();
+		RemoveVehicle(vehicle.getIdentifier());
+	}
+
+	public void RemoveVehicle(int identifier) {
 		VehicleList.Iterator iter = vehicles.iter();
 		while(iter.hasNext()) {
 			Vehicle v = iter.next();
@@ -24,7 +27,10 @@ public class Fuhrpark {
 	}
 
 	public boolean has(Vehicle vehicle) {
-		int identifier = vehicle.getIdentifier();
+		return has(vehicle.getIdentifier());
+	}
+
+	public boolean has(int identifier) {
 		VehicleList.Iterator iter = vehicles.iter();
 		while(iter.hasNext()) {
 			Vehicle v = iter.next();
@@ -32,6 +38,16 @@ public class Fuhrpark {
 				return true;
 		}
 		return false;
+	}
+
+	public Vehicle get(int identifier) {
+		VehicleList.Iterator iter = vehicles.iter();
+		while(iter.hasNext()) {
+			Vehicle v = iter.next();
+			if(v.getIdentifier() == identifier)
+				return v;
+		}
+		return null;
 	}
 
 	public double averageFuelConsumption() {

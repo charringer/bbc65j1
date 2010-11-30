@@ -50,6 +50,11 @@ public class FuhrparkTest extends Assert {
 	}
 
 	@Tst
+	public void get_shouldReturnRightObject() {
+		assertEquals(ecar1,fullPark.get(ecar1.getIdentifier()));
+	}
+
+	@Tst
 	public void calculate_FuelConsumption() {
 		assertEquals((31.+32.)/(3.+4.),fullPark.averageFuelConsumption());
 	}
