@@ -20,7 +20,7 @@ public class FuhrparkSet {
 	public Fuhrpark get(String name) {
 		FuhrparkNode c = start;
 		while(c!=null) {
-			if(c.value.getName()==name)
+			if(c.value.getName().compareTo(name)==0)
 				return c.value;
 			c = c.next;
 		}

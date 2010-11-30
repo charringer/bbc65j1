@@ -5,9 +5,12 @@ public class FuhrparkSetTest extends Assert {
 	public void insert_shouldInsert() {
 		FuhrparkSet s = new FuhrparkSet();
 		Fuhrpark f = new Fuhrpark("f1");
+		Fuhrpark f2 = new Fuhrpark("f2");
 		assertEquals(null, s.get("f1"));
 		assertTrue(s.insert(f));
 		assertEquals(f, s.get("f1"));
+		assertTrue(s.insert(f2));
+		assertEquals(f2, s.get("f2"));
 	}
 
 	@Tst
