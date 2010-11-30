@@ -55,7 +55,19 @@ public class VehicleList {
 		return new Iterator(start);
 	}
 
-	public class Iterator {
+	/* returns new ElectroCarIter set to the
+	 * first element ElectroCar in the list */
+	public ElectroCarIter ElectroCarIter() {
+		return new ElectroCarIter(iter());
+	}
+	
+	/* returns new GasolineCarIter set to the
+	 * first element GasolineCar in the list */
+	public GasolineCarIter GasolineCarIter() {
+		return new GasolineCarIter(iter());
+	}
+
+	public class Iterator implements Iter {
 		private VehicleListNode secondLast, last, cur;
 
 		/* sets the element the iterator starts with to start 
