@@ -7,6 +7,8 @@ public class Fuhrpark {
 		vehicles = new VehicleList();
 	}
 
+	public String getName() { return this.name; }
+
 	public void InsertVehicle(Vehicle vehicle) {
 		vehicles.push(vehicle);
 	}
