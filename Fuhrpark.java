@@ -88,5 +88,21 @@ public class Fuhrpark {
 		else return 0;
 	}
 
+	public double averageSeats() {
+		return averageSeatsOnFuelCars() +
+			averageSeatsOnElectroCars();
+	}
+
+	public double averageSeatsOnElectroCars() {
+		return averageSeatsFromIter(vehicles.ElectroCarIter());
+	}
+
+	public double averageSeatsOnFuelCars() {
+		return averageSeatsFromIter(vehicles.GasolineCarIter());
+	}
+
+	private double averageSeatsFromIter(Iter i) {
+		return 0;
+	}
 }
 
