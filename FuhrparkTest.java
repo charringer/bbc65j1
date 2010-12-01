@@ -113,4 +113,65 @@ public class FuhrparkTest extends Assert {
 	public void calculate_averageCargoAreaOnGasolineCars() {
 		assertEquals(11./1,fullPark.averageCargoAreaOnGasolineCars());
 	}
+
+	/* Test for special case: Fuhrpark empty */
+	@Tst
+	public void calculate_FuelConsumptionShouldBeZero() {
+		assertEquals(0.,park.averageFuelConsumption());
+	}
+
+	@Tst
+	public void calculate_FuelConsumptionPassengerShouldBeZero() {
+		assertEquals(0.,park.averageFuelConsumptionPassengerTransport());
+	}
+
+	@Tst
+	public void calculate_FuelConsumptionGoodsShouldBeZero() {
+		assertEquals(0.,park.averageFuelConsumptionGoodsTransport());
+	}
+	
+	@Tst
+	public void calculate_PowerConsumptionShouldBeZero() {
+		assertEquals(0.,park.averagePowerConsumption());
+	}
+
+	@Tst
+	public void calculate_PowerConsumptionPassengerShouldBeZero() {
+		assertEquals(0.,park.averagePowerConsumptionPassengerTransport());
+	}
+
+	@Tst
+	public void calculate_PowerConsumptionGoodsShouldBeZero() {
+		assertEquals(0.,park.averagePowerConsumptionGoodsTransport());
+	}
+
+	@Tst 
+	public void calculate_averageSeatsShouldBeZero() {
+		assertEquals(0.,park.averageSeats());
+	}
+
+	@Tst 
+	public void calculate_averageSeatsElectroShouldBeZero() {
+		assertEquals(0.,park.averageSeatsOnElectroCars());
+	}
+
+	@Tst 
+	public void calculate_averageSeatsOnGasolineCarsShouldBeZero() {
+		assertEquals(0.,park.averageSeatsOnGasolineCars());
+	}
+
+	@Tst 
+	public void calculate_averageCargoAreaShouldBeZero() {
+		assertEquals(0.,park.averageCargoArea());
+	}
+
+	@Tst 
+	public void calculate_averageCargoAreaElectroShouldBeZero() {
+		assertEquals(0.,park.averageCargoAreaOnElectroCars());
+	}
+
+	@Tst 
+	public void calculate_averageCargoAreaOnGasolineCarsShouldBeZero() {
+		assertEquals(0.,park.averageCargoAreaOnGasolineCars());
+	}
 }
