@@ -1,5 +1,5 @@
 
-public class Vehicle {
+public abstract class Vehicle {
 
 	private int identifier;
 	private int mileage;

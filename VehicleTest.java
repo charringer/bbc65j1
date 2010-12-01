@@ -22,7 +22,7 @@ public class VehicleTest extends Assert {
 
 	@Tst
 	public void setAndGetPurpose() {
-		Vehicle car = new Vehicle(1);
+		Vehicle car = new ElectroCar(1);
 
 		assertFalse(car.getPurpose() instanceof PassengerTransportation);
 		assertFalse(car.getPurpose() instanceof GoodsTransportation);
