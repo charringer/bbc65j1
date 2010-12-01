@@ -10,6 +10,12 @@ public class FuhrparkSet {
 
 	FuhrparkNode start = null;
 
+	/* Inserts another Fuhrpark into the Set,
+	 * if a Fuhrpark with same name as newFuhrpark is
+	 * already in the set the newFuhrpark won't be 
+	 * insterted.
+	 * returns true if newFuhrpark was inserted,
+	 * false otherwise */
 	public boolean insert(Fuhrpark newFuhrpark) {
 		if(this.get(newFuhrpark.getName())!=null) return false;
 		FuhrparkNode nn = this.new FuhrparkNode(start, newFuhrpark);
@@ -17,6 +23,8 @@ public class FuhrparkSet {
 		return true;
 	}
 
+	/* returns Fuhrpark with name "name" or
+	 * null if no Fuhrpark was found */
 	public Fuhrpark get(String name) {
 		FuhrparkNode c = start;
 		while(c!=null) {
